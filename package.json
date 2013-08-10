@@ -1,0 +1,44 @@
+{
+  "name": "saxtract",
+  "description": "A simple SAX + XPATH type parser for converting XML to JS objects",
+  "version": "0.0.1",
+  "homepage": "https://github.com/lucastheisen/saxtract",
+  "keywords": [
+    "xml",
+    "sax",
+    "extract",
+    "xpath"
+  ],
+  "author": {
+    "name": "Pastdev",
+    "email": "lucastheisen@pastdev.com"
+  },
+  "maintainers": [
+    {
+      "name": "Lucas Theisen",
+      "email": "lucastheisen@pastdev.com"
+    }
+  ],
+  "main": "saxtract.js",
+  "bugs": {
+    "url": "https://github.com/lucastheisen/saxtract/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucastheisen/saxtract.git"
+  },
+  "engines": {
+    "node": ">= 0.4.1"
+  },
+  "dependencies": {
+    "libxmljs": ">= 0.8.1"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/lucastheisen/saxtract/raw/master/LICENSE"
+    }
+  ],
+  "readme": "TBD...",
+  "readmeFilename": "README.mkd"
+}
