@@ -1,7 +1,9 @@
 var libxml = require("libxmljs");
 
 function addValue(obj, spec, value) {
-    var type = typeof(spec);
+    var type = typeof(spec),
+        name,
+        key;
 
     if ( type === 'string' ) {
         obj[spec] = value;
@@ -10,12 +12,20 @@ function addValue(obj, spec, value) {
         spec( obj, value );
     }
     else {
-        var name = spec['name'];
+        name = spec['name'];
         if ( spec['type'] === 'array' ) {
             if ( typeof(obj[name]) === 'undefined' ) {
                 obj[name] = [];
             }
             obj[name].push( value );
+        }
+        else if ( spec['type'] === 'map' ) {
+console.log("REMOVE ME: value: " + JSON.stringify(value));
+            key = spec['key']; 
+            if ( typeof(obj[name]) === 'undefined' ) {
+                obj[name] = {};
+            }
+            obj[name][value[key]] = value;
         }
         else if ( spec['type'] === 'first' ) {
             if ( typeof(obj[name]) === 'undefined' ) {
