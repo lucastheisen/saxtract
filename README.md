@@ -1,7 +1,34 @@
-I will add to this as I have time, but if you are actually interested, you can
-look at test/saxtract_test.js. It shows a simple example of how to use 
-saxtract. Here is a simple example:
+The idea behind saxtract is to use a combination of SAX parsing and XPath
+data extraction.  This means you do not need to load the entire DOM to leverage
+the simplicity of XPath.  Saxtract uses a `spec` object to define the data to 
+extract during parsing.  For example:
 
+```javascript
+var spec = {
+    '/root/@id': 'id'
+};
+```
+
+Says to take whatever matches the xpath `/root/@id` and store it in the result
+object under the key `id`.  So if you were to parse this XML:
+
+```xml
+var xml = "<root id='abc' />";
+```
+
+Thusly:
+
+```javascript
+var result = saxtract.parse(xml, spec);
+```
+
+Your result would look like this (using JSON.stringify):
+
+```javascript
+{'id':'abc'}
+```
+
+A more real world example pulled directly from the unit tests (test/saxtract_test.js) shows:
 
 ```javascript
     var saxtract = require("../saxtract"),
@@ -36,3 +63,10 @@ saxtract. Here is a simple example:
     
     assert.deepEqual(expected, result);
 ```
+
+
+
+I will add to this as I have time, but if you are actually interested, you can
+look at test/saxtract_test.js. It shows a simple example of how to use 
+saxtract. Here is a simple example:
+
