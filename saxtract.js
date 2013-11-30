@@ -20,7 +20,6 @@ function addValue(obj, spec, value) {
             obj[name].push( value );
         }
         else if ( spec['type'] === 'map' ) {
-console.log("REMOVE ME: value: " + JSON.stringify(value));
             key = spec['key']; 
             if ( typeof(obj[name]) === 'undefined' ) {
                 obj[name] = {};
