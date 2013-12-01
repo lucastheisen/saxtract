@@ -64,9 +64,6 @@ A more real world example pulled directly from the unit tests (test/saxtract_tes
     assert.deepEqual(expected, result);
 ```
 
-
-
 I will add to this as I have time, but if you are actually interested, you can
-look at test/saxtract_test.js. It shows a simple example of how to use 
-saxtract. Here is a simple example:
+look at test/saxtract_test.js which has the most up to date examples. 
 
