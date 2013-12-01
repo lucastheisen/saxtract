@@ -1,7 +1,7 @@
 {
   "name": "saxtract",
   "description": "A simple SAX + XPATH type parser for converting XML to JS objects",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/lucastheisen/saxtract",
   "keywords": [
     "xml",
@@ -39,6 +39,5 @@
       "url": "https://github.com/lucastheisen/saxtract/raw/master/LICENSE"
     }
   ],
-  "readme": "TBD...",
-  "readmeFilename": "README.mkd"
+  "readmeFilename": "README.md"
 }
