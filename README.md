@@ -67,3 +67,11 @@ A more real world example pulled directly from the unit tests (test/saxtract_tes
 I will add to this as I have time, but if you are actually interested, you can
 look at test/saxtract_test.js which has the most up to date examples. 
 
+Logging can be turned on using:
+
+```javascript
+    var saxtract = require("saxtract");
+    saxtract.logging = true;
+
+    ...
+```

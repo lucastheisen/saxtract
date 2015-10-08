@@ -2,6 +2,8 @@ var saxtract = require("../saxtract"),
     assert = require("assert"),
     result;
 
+saxtract.logging = true;
+
 describe('saxtract', function() {
     describe('#parse(xml, spec)', function() {
         it('should parse basic text value', function() {

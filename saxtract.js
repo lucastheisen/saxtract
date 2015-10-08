@@ -37,8 +37,9 @@ function addValue(obj, spec, value) {
     }
 }
 
+exports.logging = false;
 exports.parse = function(xml, spec) {
-    console.log('parsing ' + xml);
+    exports.logging && console.log('parsing ' + xml);
     var parser = new libxml.SaxParser(),
         result = {};
         elementStack = [{spec:spec,specPath:'',result:result}],
@@ -151,13 +152,13 @@ exports.parse = function(xml, spec) {
         }
     });
     parser.on('comment', function(message) {
-        console.log(message);
+        exports.logging && console.log(message);
     });
     parser.on('warning', function(message) {
-        console.log(message);
+        exports.logging && console.log(message);
     });
     parser.on('error', function(message) {
-        console.log(message);
+        exports.logging && console.log(message);
     });
 
     parser.parseString(xml);
