@@ -285,5 +285,34 @@ describe('saxtract', function() {
             //    "\n*****end*****");
             assert.deepEqual(expected, result);
         });
+
+        it('should preserve whitespace in element content using global setting', function() {
+            var before = saxtract.preserveWhitespace;
+            try {
+                saxtract.preserveWhitespace = true;
+                var result = saxtract.parse("<?xml version='1.0' encoding='UTF-8'?><root>foo </root>", {
+                    '/root': 'rootValue'
+                });
+                assert.strictEqual('foo ', result['rootValue']);
+            }
+            finally {
+                saxtract.preserveWhitespace = before;
+            }
+        });
+
+        it('should preserve whitespace in element content using parse argument', function() {
+            var result = saxtract.parse("<?xml version='1.0' encoding='UTF-8'?><root>foo </root>", {
+                '/root': 'rootValue'
+            },
+            true);
+            assert.strictEqual('foo ', result['rootValue']);
+        });
+
+        it('should preserve whitespace in option value', function() {
+            var result = saxtract.parse("<?xml version='1.0' encoding='UTF-8'?><root value='foo ' />", {
+                '/root/@value': 'rootOptionValue'
+            });
+            assert.strictEqual('foo ', result['rootOptionValue']);
+        });
     });
 });

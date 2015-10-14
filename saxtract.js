@@ -38,7 +38,12 @@ function addValue(obj, spec, value) {
 }
 
 exports.logging = false;
-exports.parse = function(xml, spec) {
+exports.preserveWhitespace = false;
+exports.parse = function(xml, spec, preserveWhitespace) {
+    if ( typeof(preserveWhitespace) === 'undefined' ) {
+        preserveWhitespace = exports.preserveWhitespace;
+    }
+
     exports.logging && console.log('parsing ' + xml);
     var parser = new libxml.SaxParser(),
         result = {};
@@ -106,7 +111,8 @@ exports.parse = function(xml, spec) {
         
 
         if ( spec[path] && buffer !== null ) {
-            addValue(result, spec[path], buffer.trim());
+            addValue(result, spec[path], 
+                preserveWhitespace ? buffer : buffer.trim());
         }
         attrs.forEach(function(attribute) {
             var name = attribute[0];

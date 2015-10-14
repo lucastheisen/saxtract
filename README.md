@@ -67,6 +67,8 @@ A more real world example pulled directly from the unit tests (test/saxtract_tes
 I will add to this as I have time, but if you are actually interested, you can
 look at test/saxtract_test.js which has the most up to date examples. 
 
+= Logging
+
 Logging can be turned on using:
 
 ```javascript
@@ -74,4 +76,22 @@ Logging can be turned on using:
     saxtract.logging = true;
 
     ...
+```
+
+= Whitespace Preservation
+
+Whitespace preservation can be enabled globally using:
+
+```javascript
+    var saxtract = require("saxtract");
+    saxtract.preserveWhitespace = true;
+
+    ...
+```
+
+or per call to parse:
+
+```javascript
+    var saxtract = require("saxtract");
+    saxtract.parse(xml, spec, preserveWhitespace);
 ```
