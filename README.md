@@ -1,3 +1,6 @@
+# saxtract
+
+## General Usage
 The idea behind saxtract is to use a combination of SAX parsing and XPath
 data extraction.  This means you do not need to load the entire DOM to leverage
 the simplicity of XPath.  Saxtract uses a `spec` object to define the data to 
@@ -67,7 +70,8 @@ A more real world example pulled directly from the unit tests (test/saxtract_tes
 I will add to this as I have time, but if you are actually interested, you can
 look at test/saxtract_test.js which has the most up to date examples. 
 
-= Logging
+## Options
+### Logging
 
 Logging can be turned on using:
 
@@ -78,7 +82,7 @@ Logging can be turned on using:
     ...
 ```
 
-= Whitespace Preservation
+### Whitespace Preservation
 
 Whitespace preservation can be enabled globally using:
 
