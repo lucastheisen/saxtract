@@ -1,7 +1,7 @@
 {
   "name": "saxtract",
   "description": "A simple SAX + XPATH type parser for converting XML to JS objects",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "homepage": "https://github.com/lucastheisen/saxtract",
   "keywords": [
     "xml",
@@ -28,13 +28,14 @@
     "url": "https://github.com/lucastheisen/saxtract.git"
   },
   "engines": {
-    "node": ">= 0.4.1"
+    "node": ">= 4.4.5"
   },
   "dependencies": {
-    "libxmljs": ">= 0.8.1"
   },
   "devDependencies": {
-    "mocha": ">= 2.3.3"
+    "libxmljs": ">= 0.8.1",
+    "mocha": ">= 2.3.3",
+    "sax": ">= 1.2.1"
   },
   "licenses": [
     {

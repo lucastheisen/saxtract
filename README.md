@@ -1,5 +1,19 @@
 # saxtract
 
+## Require
+Saxtract now supports both libxmljs and saxjs.  You must include one or the
+other in your `package.json` as neither is a dependency of `saxtract`.  You
+indicate which one you desire to use thusly:
+
+```javascript
+var saxtract = require("saxtract").libxmljs;
+
+// or
+
+var saxtract = require("saxtract").saxjs;
+
+```
+
 ## General Usage
 The idea behind saxtract is to use a combination of SAX parsing and XPath
 data extraction.  This means you do not need to load the entire DOM to leverage
@@ -34,7 +48,7 @@ Your result would look like this (using JSON.stringify):
 A more real world example pulled directly from the unit tests (test/saxtract_test.js) shows:
 
 ```javascript
-    var saxtract = require("../saxtract"),
+    var saxtract = require("../saxtract").saxjs,
         assert = require("assert"),
         expected = {
             id: '5293',
@@ -70,13 +84,15 @@ A more real world example pulled directly from the unit tests (test/saxtract_tes
 I will add to this as I have time, but if you are actually interested, you can
 look at test/saxtract_test.js which has the most up to date examples. 
 
+
+
 ## Options
 ### Logging
 
 Logging can be turned on using:
 
 ```javascript
-    var saxtract = require("saxtract");
+    var saxtract = require("saxtract").saxjs;
     saxtract.logging = true;
 
     ...
@@ -87,7 +103,7 @@ Logging can be turned on using:
 Whitespace preservation can be enabled globally using:
 
 ```javascript
-    var saxtract = require("saxtract");
+    var saxtract = require("saxtract").saxjs;
     saxtract.preserveWhitespace = true;
 
     ...
@@ -96,6 +112,6 @@ Whitespace preservation can be enabled globally using:
 or per call to parse:
 
 ```javascript
-    var saxtract = require("saxtract");
+    var saxtract = require("saxtract").saxjs;
     saxtract.parse(xml, spec, preserveWhitespace);
 ```

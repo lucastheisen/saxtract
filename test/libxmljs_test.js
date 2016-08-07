@@ -1,4 +1,6 @@
-var saxtract = require("../saxtract"),
+'use strict';
+
+var saxtract = require("../").libxmljs,
     assert = require("assert"),
     result;
 
